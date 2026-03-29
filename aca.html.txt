@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Nurin Trisya ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    .gallery img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background-color: #fff;
+      color: #ff6f91;
+      cursor: pointer;
+    }
+
+    #letter {
+      margin-top: 25px;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .heart {
+      position: fixed;
+      color: red;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(100vh);}
+      100% {transform: translateY(-10vh);}
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Selamat Ulang Tahun, Nurin Trisya ❤️</h1>
+
+  <div class="gallery">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+  </div>
+
+  <button onclick="startTyping()">Buka Surat Cinta 💌</button>
+
+  <div id="letter"></div>
+</div>
+
+<script>
+const text = `Untuk Nurin Trisya...
+
+Di hari spesialmu ini, aku ingin kamu tahu betapa berharganya kamu dalam hidupku.
+
+Sejak kamu hadir, semuanya berubah menjadi lebih indah.
+Hari-hariku terasa lebih berwarna, dan senyumanmu selalu jadi alasan bahagiaku.
+
+Aku mungkin tidak selalu sempurna,
+tapi aku akan selalu berusaha untuk mencintaimu dengan cara terbaik yang aku bisa.
+
+Aku ingin selalu ada di sampingmu,
+dalam tawa, dalam tangis, dalam setiap langkah hidupmu.
+
+Terima kasih sudah menjadi rumah terbaik untuk hatiku.
+Terima kasih sudah mencintaiku dengan tulus.
+
+Aku berjanji akan terus menjagamu,
+menyayangimu, dan tidak akan pernah meninggalkanmu.
+
+Selamat ulang tahun, sayangku Nurin Trisya...
+Aku mencintaimu, hari ini, besok, dan selamanya ❤️`;
+
+let i = 0;
+
+function startTyping() {
+  const speed = 40;
+  const element = document.getElementById("letter");
+  element.innerHTML = "";
+
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+
+  typing();
+}
+
+// efek hati
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
